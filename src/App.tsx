@@ -4,7 +4,7 @@ import ScenMain from "./tabs/Scenarios/ScenMain";
 import LitMain from "./tabs/Literature/LitMain";
 import BranchMain from "./tabs/Branching/BranchMain";
 import LessonsMain from "./tabs/Lessons/LessonsMain";
-import Interactions from "./tabs/Interactions/Interactions";
+import Interactions from "./tabs/Interactions/Interactions.tsx";
 import Assessment from "./tabs/Assessment/Assessment";
 import Accessibility from "./tabs/Accessibility/Accessibility";
 import References from "./tabs/References/References";
