@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global colors */
+:root {
+  --primary: #1565C0;
+  --secondary: #2E7D32;
+  --accent: #FFB300;
+  --background: #F7F9FC;
+  --text: #121212;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: Inter, sans-serif;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  color: var(--text);
+}
