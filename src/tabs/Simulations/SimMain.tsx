@@ -3,7 +3,7 @@ import {
   AccordionItem,
   AccordionTrigger,
   AccordionContent,
-} from "../../components/ui/Accordion.tsx";
+} from "../../components/ui/Accordion";
 
 export default function SimMain() {
   return (
