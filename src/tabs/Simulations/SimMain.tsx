@@ -1,9 +1,5 @@
-import {
-  Accordion,
-  AccordionItem,
-  AccordionTrigger,
-  AccordionContent,
-} from "../../components/ui/Accordion";
+import { ... } from "../../components/ui/Accordion";
+
 
 export default function SimMain() {
   return (
