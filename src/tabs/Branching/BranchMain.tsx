@@ -1,4 +1,4 @@
-import { ToggleBox } from "../../components/ui/ToggleBox";
+import { ToggleBox } from "../../../components/ui/ToggleBox";
 
 export default function BranchMain() {
   return (
