@@ -5,83 +5,88 @@ import {
   AccordionContent
 } from "../../components/ui/Accordion";
 
-
 export default function SimMain() {
   return (
-    <div className="space-y-8">
-      <h1 className="text-3xl font-bold text-primary">
-        BT Simülasyonları
-      </h1>
+    <div className="space-y-10">
+      <h1 className="text-3xl font-bold text-primary">BT Simülasyonları</h1>
 
-      <p className="text-lg leading-relaxed">
-        Bilgi teknolojileri eğitiminde simülasyonlar, öğrencilerin karmaşık ağ
-        yapıları, protokoller ve güvenlik tehditlerini risksiz ve kontrollü
-        bir ortamda öğrenmelerini sağlar. Gerçek donanım maliyetleri olmadan
-        deneme–yanılma süreciyle öğrenme hızlanır.
+      <p className="text-lg text-gray-800 leading-relaxed">
+        Bilgi Teknolojileri eğitiminde simülasyonlar, öğrencilerin karmaşık ağ
+        yapılarını, protokolleri ve veri akış süreçlerini risksiz bir ortamda
+        deneyimlemesini sağlar. Donanım maliyetini azaltır, öğrenmeyi hızlandırır
+        ve soyut kavramları somutlaştırır.
       </p>
 
-      {/* ────────────────────────────── */}
-      {/*   A C C O R D I O N           */}
-      {/* ────────────────────────────── */}
+      {/* ---------------------------------------------------------------- */}
+      {/*   1) Simülasyon Türleri – Tablo                                 */}
+      {/* ---------------------------------------------------------------- */}
+      <section className="bg-white p-6 rounded-xl shadow-sm border">
+        <h2 className="text-xl font-semibold mb-4">Simülasyon Türleri</h2>
 
+        <table className="w-full text-left border-collapse text-gray-700">
+          <thead>
+            <tr className="border-b">
+              <th className="py-2 font-medium">Simülasyon Türü</th>
+              <th className="py-2 font-medium">Açıklama</th>
+              <th className="py-2 font-medium">BT Kullanımı</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-b">
+              <td className="py-2">Ağ Simülasyonları</td>
+              <td>Topoloji ve cihaz modelleme</td>
+              <td>Packet Tracer, GNS3</td>
+            </tr>
+            <tr className="border-b">
+              <td className="py-2">Protokol Simülasyonları</td>
+              <td>Veri akışı ve iletişim</td>
+              <td>ARP, DHCP, OSPF modelleri</td>
+            </tr>
+            <tr>
+              <td className="py-2">Kavramsal Simülasyonlar</td>
+              <td>Temel bilgisayar bilimi</td>
+              <td>PhET, Luma AI</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      {/* ---------------------------------------------------------------- */}
+      {/*   2) Araçlara Özel Accordion                                    */}
+      {/* ---------------------------------------------------------------- */}
       <Accordion>
         <AccordionItem value="packettracer">
-          <AccordionTrigger>
-            Cisco Packet Tracer
-          </AccordionTrigger>
+          <AccordionTrigger>Cisco Packet Tracer</AccordionTrigger>
           <AccordionContent>
-            Cisco Packet Tracer, öğrencilerin gerçek donanım gerektirmeden
-            ağ topolojileri oluşturmasını, cihaz yapılandırmasını ve paket
-            hareketini takip etmesini sağlar.
-            <ul className="list-disc ml-6 mt-3 space-y-1">
-              <li>Temel yönlendirme öğretimi</li>
-              <li>Switch / Router mantığını kavratır</li>
-              <li>IP yapılandırması ve ping testleri</li>
-            </ul>
+            Ağ topolojisi kurma, IP yapılandırma ve paket takibi için ideal.
+            Öğrencilerin temel yönlendirme ve iletişim mantığını öğrenmesini sağlar.
           </AccordionContent>
         </AccordionItem>
 
         <AccordionItem value="gns3">
-          <AccordionTrigger>
-            GNS3
-          </AccordionTrigger>
+          <AccordionTrigger>GNS3</AccordionTrigger>
           <AccordionContent>
-            GNS3, gerçek Cisco IOS imajlarıyla çalışan profesyonel seviyede
-            bir simülasyon platformudur. Karmaşık ağ mimarilerini simüle etmek
-            için idealdir.
-            <ul className="list-disc ml-6 mt-3 space-y-1">
-              <li>Gerçek router yazılımı kullanımı</li>
-              <li>Firewall / IDS senaryoları</li>
-              <li>İleri seviye routing algoritmaları</li>
-            </ul>
+            Gerçek Cisco IOS imajları kullanır ve profesyonel seviyede simülasyon sunar.
+            Karmaşık ağ yapıları ve firewall testleri için uygundur.
           </AccordionContent>
         </AccordionItem>
 
         <AccordionItem value="phet">
-          <AccordionTrigger>
-            PhET & Luma AI
-          </AccordionTrigger>
+          <AccordionTrigger>PhET & Luma AI</AccordionTrigger>
           <AccordionContent>
-            PhET temel bilgisayar bilimi kavramlarının modellenmesinde
-            kullanılabilir. Luma AI ise süreçlerin 3D görselleştirilmesini
-            kolaylaştırır.
-            <p className="mt-3">
-              Özellikle BT eğitiminde kavramsal modelleme için etkili iki araçtır.
-            </p>
+            Kavramsal CS modelleri ve 3D süreç görselleştirmeleri için kullanılır.
+            TCP–UDP, veri paketi akışı gibi soyut kavramları anlaşılır kılar.
           </AccordionContent>
         </AccordionItem>
       </Accordion>
 
-      {/* ────────────────────────────── */}
-      {/*   M I N I   U Y G U L A M A   */}
-      {/* ────────────────────────────── */}
-
+      {/* ---------------------------------------------------------------- */}
+      {/*   3) Mini Uygulama                                              */}
+      {/* ---------------------------------------------------------------- */}
       <section className="bg-primary/10 p-6 rounded-xl border-l-4 border-primary">
         <h3 className="text-xl font-semibold">Mini Uygulama</h3>
-        <p className="mt-2">
-          Packet Tracer içinde küçük bir ağ kurun:
-        </p>
-        <ul className="list-disc ml-6 mt-3 space-y-1">
+        <p className="mt-2">Packet Tracer'da küçük bir ağ oluşturun:</p>
+        <ul className="list-disc ml-6 mt-2 space-y-1">
           <li>2 PC</li>
           <li>1 Switch</li>
           <li>1 Router</li>
@@ -89,8 +94,32 @@ export default function SimMain() {
         </ul>
         <p className="mt-3 font-medium">
           Beklenen Çıktı:{" "}
-          <span className="text-primary">Temel ağ iletişimini kavrama.</span>
+          <span className="text-primary font-semibold">
+            Temel ağ iletişimi mantığını anlama.
+          </span>
         </p>
+      </section>
+
+      {/* ---------------------------------------------------------------- */}
+      {/*   4) Mini Quiz (Statik – sonra interaktif yapabiliriz)          */}
+      {/* ---------------------------------------------------------------- */}
+      <section className="bg-white p-6 rounded-xl border shadow-sm">
+        <h3 className="text-xl font-semibold mb-3">Mini Quiz</h3>
+
+        <p className="font-medium">1) Packet Tracer ne için kullanılır?</p>
+        <ul className="ml-6">
+          <li>B) Ağ topolojisi modelleme ✔</li>
+        </ul>
+
+        <p className="font-medium mt-3">2) GNS3 hangi seviyeye uygundur?</p>
+        <ul className="ml-6">
+          <li>B) Profesyonel ağ uzmanlığı ✔</li>
+        </ul>
+
+        <p className="font-medium mt-3">3) Simülasyonun avantajı nedir?</p>
+        <ul className="ml-6">
+          <li>A) Donanım maliyetini azaltır ✔</li>
+        </ul>
       </section>
     </div>
   );
