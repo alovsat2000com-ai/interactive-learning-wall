@@ -83,35 +83,11 @@ export default function SimMain() {
       </Accordion>
 
       {/* ---------------------------------------------------------------- */}
-      {/*   3) Mini Uygulama                                              */}
+      {/*   3) Mini Quiz (Interactive)                                    */}
       {/* ---------------------------------------------------------------- */}
-      // MINI QUIZ
-<section className="bg-primary/10 p-6 rounded-xl border-l-4 border-primary mt-10">
-  <h3 className="text-xl font-semibold">Mini Quiz</h3>
-
-  <MiniQuiz />
-</section>
-
-      {/* ---------------------------------------------------------------- */}
-      {/*   4) Mini Quiz (Statik – sonra interaktif yapabiliriz)          */}
-      {/* ---------------------------------------------------------------- */}
-      <section className="bg-white p-6 rounded-xl border shadow-sm">
-        <h3 className="text-xl font-semibold mb-3">Mini Quiz</h3>
-
-        <p className="font-medium">1) Packet Tracer ne için kullanılır?</p>
-        <ul className="ml-6">
-          <li>B) Ağ topolojisi modelleme ✔</li>
-        </ul>
-
-        <p className="font-medium mt-3">2) GNS3 hangi seviyeye uygundur?</p>
-        <ul className="ml-6">
-          <li>B) Profesyonel ağ uzmanlığı ✔</li>
-        </ul>
-
-        <p className="font-medium mt-3">3) Simülasyonun avantajı nedir?</p>
-        <ul className="ml-6">
-          <li>A) Donanım maliyetini azaltır ✔</li>
-        </ul>
+      <section className="bg-primary/10 p-6 rounded-xl border-l-4 border-primary mt-10">
+        <h3 className="text-xl font-semibold">Mini Quiz</h3>
+        <MiniQuiz />
       </section>
     </div>
   );
