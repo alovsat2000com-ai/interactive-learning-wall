@@ -1,3 +1,5 @@
+import MiniDecision from "../../components/ui/MiniDecision";
+
 import {
   Accordion,
   AccordionItem,
@@ -19,9 +21,7 @@ export default function ScenMain() {
         durumların öğretiminde son derece etkilidir.
       </p>
 
-      {/* ------------------------------------------------------------ */}
-      {/* 1) Senaryo Türleri – Bilgi Teknolojileri                    */}
-      {/* ------------------------------------------------------------ */}
+      {/* 1) Senaryo Türleri – Bilgi Teknolojileri */}
       <section className="bg-white p-6 rounded-xl border shadow-sm">
         <h2 className="text-xl font-semibold mb-3">
           BT Eğitiminde Senaryo Türleri
@@ -29,27 +29,25 @@ export default function ScenMain() {
 
         <ul className="list-disc ml-6 space-y-2 text-gray-700">
           <li>
-            <strong>Olay Tabanlı Senaryo (Incident Scenario):</strong> 
-            Öğrenciye ağda veya sunucuda gerçekleşen bir problem verilir.
+            <strong>Olay Tabanlı Senaryo (Incident Scenario):</strong>
+            {" "}Öğrenciye ağda veya sunucuda gerçekleşen bir problem verilir.
           </li>
           <li>
-            <strong>Karar Noktalı Senaryo (Branching):</strong> 
-            Her adımda öğrenci bir seçim yapar ve farklı sonuçlara gider.
+            <strong>Karar Noktalı Senaryo (Branching):</strong>
+            {" "}Her adımda öğrenci bir seçim yapar ve farklı sonuçlara gider.
           </li>
           <li>
-            <strong>Rol Tabanlı Senaryo:</strong> 
-            Öğrenci BT uzmanı, analist, güvenlik operatörü vb. rolleri üstlenir.
+            <strong>Rol Tabanlı Senaryo:</strong>
+            {" "}Öğrenci BT uzmanı, analist, güvenlik operatörü vb. rolleri üstlenir.
           </li>
           <li>
-            <strong>Log Analizi Senaryosu:</strong> 
-            Firewall, IDS veya sistem logları üzerinden suçla doğru ipuçları aranır.
+            <strong>Log Analizi Senaryosu:</strong>
+            {" "}Firewall, IDS veya sistem logları üzerinden suçla doğru ipuçları aranır.
           </li>
         </ul>
       </section>
 
-      {/* ------------------------------------------------------------ */}
-      {/* 2) Accordion – 3 Büyük BT Senaryosu                         */}
-      {/* ------------------------------------------------------------ */}
+      {/* 2) Accordion – 3 Büyük BT Senaryosu */}
       <Accordion>
         <AccordionItem value="incident">
           <AccordionTrigger>Ağ Arızası Olay Senaryosu</AccordionTrigger>
@@ -88,60 +86,10 @@ export default function ScenMain() {
         </AccordionItem>
       </Accordion>
 
-      {/* ------------------------------------------------------------ */}
-      {/* 3) Mini Etkileşim – Karar Noktası                           */}
-      {/* ------------------------------------------------------------ */}
-      import { useState } from "react";
+      {/* 3) Mini Etkileşim – Karar Noktası */}
+      <MiniDecision />
 
-export default function MiniDecision() {
-  const [selected, setSelected] = useState<number | null>(null);
-
-  const options = [
-    "Log analizi yapmak",
-    "Firewall’u kapatmak",
-    "IP bloklamak",
-  ];
-
-  return (
-    <div className="mt-4">
-      <p className="text-lg font-medium">İlk adımda hangi kararı alırsınız?</p>
-
-      <div className="mt-4 space-y-3">
-        {options.map((opt, i) => (
-          <button
-            key={i}
-            onClick={() => setSelected(i)}
-            className={`w-full p-3 border rounded-xl text-left transition
-              ${
-                selected === null
-                  ? "bg-white"
-                  : i === 0
-                  ? "bg-green-200 border-green-600"
-                  : i === selected
-                  ? "bg-red-200 border-red-600"
-                  : "bg-white"
-              }
-            `}
-          >
-            {opt}
-          </button>
-        ))}
-      </div>
-
-      {selected !== null && (
-        <p className="mt-4 text-sm text-gray-700 italic">
-          {selected === 0
-            ? "Doğru yaklaşım: önce log analizi."
-            : "Bu tercih doğru değil. İlk adım analiz olmalı."}
-        </p>
-      )}
-    </div>
-  );
-}
-
-      {/* ------------------------------------------------------------ */}
-      {/* 4) Öğrenme Kazanımları                                      */}
-      {/* ------------------------------------------------------------ */}
+      {/* 4) Öğrenme Kazanımları */}
       <section className="bg-white p-6 rounded-xl shadow-sm border">
         <h3 className="text-xl font-semibold mb-3">Öğrenme Kazanımları</h3>
 
