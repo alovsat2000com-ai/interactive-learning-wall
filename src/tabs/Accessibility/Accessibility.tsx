@@ -1,83 +1,68 @@
-import { Card } from "../../components/ui/Card";
-import { SectionTitle } from "../../components/SectionTitle";
 import { useState } from "react";
+import { SectionTitle } from "../../components/SectionTitle";
+import { Card } from "../../components/ui/Card";
 
 export default function Accessibility() {
-  const [open, setOpen] = useState<number | null>(null);
-
-  const items = [
-    {
-      title: "1) Farklılaştırılmış Öğrenme (Differentiation)",
-      content: (
-        <>
-          <p>
-            Öğrencilerin seviyeleri, öğrenme hızları ve teknik altyapıları
-            farklı olabilir. Bu yüzden BT simülasyonlarında farklılaştırma
-            büyük önem taşır.
-          </p>
-
-          <ul className="list-disc ml-6 mt-3 space-y-1 text-gray-700">
-            <li>Basit – Orta – İleri seviye görevler</li>
-            <li>Destekleyici ipuçları ve rehber görseller</li>
-            <li>Video açıklamaları veya sesli anlatım</li>
-            <li>Kademeli zorluk artışı</li>
-          </ul>
-        </>
-      ),
-    },
-    {
-      title: "2) Erişilebilirlik (Accessibility)",
-      content: (
-        <>
-          <p>
-            BT eğitiminde dijital materyaller tüm öğrencilere erişilebilir
-            olmalıdır. Görsel, işitsel veya motor beceri sınırlılıkları
-            olan öğrenciler için eşit öğrenme fırsatı sağlanır.
-          </p>
-
-          <ul className="list-disc ml-6 mt-3 space-y-1 text-gray-700">
-            <li>Yüksek kontrastlı temalar</li>
-            <li>Ekran okuyucu uyumu</li>
-            <li>Alt metin (alt-text) zorunluluğu</li>
-            <li>Klavye ile gezinme desteği</li>
-            <li>Renk körlüğü dostu paletler</li>
-          </ul>
-        </>
-      ),
-    },
-    {
-      title: "3) BT Senaryolarında Erişilebilirlik Örnekleri",
-      content: (
-        <>
-          <p>Simülasyon ve senaryo tabanlı BT eğitiminde erişilebilirlik şu şekilde uygulanabilir:</p>
-
-          <ul className="list-disc ml-6 mt-3 space-y-1 text-gray-700">
-            <li>Komut satırı işlemleri için sesli açıklama</li>
-            <li>Router topolojilerinde basitleştirilmiş görünüm</li>
-            <li>“Auto-complete” destekli IP yazımı</li>
-            <li>Görsel karmaşıklığı azaltan sade mod</li>
-          </ul>
-        </>
-      ),
-    },
-  ];
+  const [opened, setOpened] = useState(false);
 
   return (
     <div className="space-y-10">
       <SectionTitle title="Farklılaştırma & Erişilebilirlik" />
 
-      {items.map((item, idx) => (
-        <Card
-          key={idx}
-          className="p-6 space-y-3 cursor-pointer hover:shadow-lg transition"
-          onClick={() => setOpen(open === idx ? null : idx)}
+      <Card className="p-6 space-y-4">
+        <h2 className="text-2xl font-semibold text-primary">
+          BT Eğitiminde Erişilebilirlik İlkeleri
+        </h2>
+
+        <p className="text-lg">
+          Dijital içeriklerin tüm öğrenciler tarafından erişilebilir olması, 
+          öğrenmenin temel şartıdır. Görsel, işitsel veya bilişsel farklılıklar 
+          dikkate alınarak tasarlanan içerikler, öğrenme verimliliğini artırır.
+        </p>
+
+        <ul className="list-disc ml-6 space-y-2 text-lg">
+          <li>Kontrast ayarlarının doğru yapılması</li>
+          <li>Alternatif metin (ALT text) kullanımı</li>
+          <li>Klavye ile gezinme desteği</li>
+          <li>Basitleştirilmiş dil ve net yapılar</li>
+        </ul>
+      </Card>
+
+      {/* MINI INTERAKTIF BLOK */}
+      <Card className="p-6 border-l-4 border-primary bg-primary/10">
+        <h3 className="text-xl font-semibold">Mini Etkileşim</h3>
+
+        <button
+          onClick={() => setOpened(!opened)}
+          className="mt-4 px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/80 transition"
         >
-          <h2 className="text-2xl font-semibold text-primary">{item.title}</h2>
+          Kontrast Kontrolü Örneği
+        </button>
 
-          {open === idx && (
-            <div className="mt-2 text-lg text-gray-800">
-              {item.content}
+        {opened && (
+          <div className="mt-4 space-y-3">
+            <p className="text-lg">
+              Bu kutu, yüksek kontrast örneğini göstermektedir.
+            </p>
+
+            <div className="p-4 bg-black text-white rounded-lg">
+              Yüksek kontrast: Siyah zemin, beyaz yazı.
             </div>
-          )}
 
-          <p className="
+            <div className="p-4 bg-gray-200 text-gray-700 rounded-lg">
+              Düşük kontrast: Açık gri zemin, gri yazı.
+            </div>
+          </div>
+        )}
+      </Card>
+
+      <Card className="p-6">
+        <p className="text-lg">
+          Erişilebilir içerik her öğrencinin öğrenme hakkını destekler. 
+          Özellikle BT alanında hızlı ve yoğun bilgi akışı olduğu için 
+          sade, anlaşılır, kapsayıcı tasarım büyük önem taşır.
+        </p>
+      </Card>
+    </div>
+  );
+}
