@@ -54,9 +54,22 @@ export default function BranchBT() {
     setTimeout(() => {
       if (step < steps.length - 1) {
         setStep(step + 1);
+      } else {
+        setStep("done" as any)
       }
       setSelected(null);
     }, 1000);
+  }
+
+  if (step === "done") {
+    return (
+      <div className="p-6 bg-green-50 rounded-xl border-l-4 border-green-600">
+        <h2 className="text-2xl font-semibold text-green-700">Senaryo Tamamlandı!</h2>
+        <p className="mt-4 text-lg">
+          Tüm adımları başarıyla geçtiniz. Olay müdahale sürecindeki kritik düşünme becerileri gelişti.
+        </p>
+      </div>
+    );
   }
 
   return (

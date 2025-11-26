@@ -5,6 +5,8 @@ import {
   AccordionContent
 } from "../../components/ui/Accordion";
 
+import MiniQuiz from "../../components/ui/MiniQuiz";
+
 export default function SimMain() {
   return (
     <div className="space-y-10">
@@ -83,22 +85,12 @@ export default function SimMain() {
       {/* ---------------------------------------------------------------- */}
       {/*   3) Mini Uygulama                                              */}
       {/* ---------------------------------------------------------------- */}
-      <section className="bg-primary/10 p-6 rounded-xl border-l-4 border-primary">
-        <h3 className="text-xl font-semibold">Mini Uygulama</h3>
-        <p className="mt-2">Packet Tracer'da küçük bir ağ oluşturun:</p>
-        <ul className="list-disc ml-6 mt-2 space-y-1">
-          <li>2 PC</li>
-          <li>1 Switch</li>
-          <li>1 Router</li>
-          <li>IP atama + Ping testi</li>
-        </ul>
-        <p className="mt-3 font-medium">
-          Beklenen Çıktı:{" "}
-          <span className="text-primary font-semibold">
-            Temel ağ iletişimi mantığını anlama.
-          </span>
-        </p>
-      </section>
+      // MINI QUIZ
+<section className="bg-primary/10 p-6 rounded-xl border-l-4 border-primary mt-10">
+  <h3 className="text-xl font-semibold">Mini Quiz</h3>
+
+  <MiniQuiz />
+</section>
 
       {/* ---------------------------------------------------------------- */}
       {/*   4) Mini Quiz (Statik – sonra interaktif yapabiliriz)          */}

@@ -91,32 +91,53 @@ export default function ScenMain() {
       {/* ------------------------------------------------------------ */}
       {/* 3) Mini Etkileşim – Karar Noktası                           */}
       {/* ------------------------------------------------------------ */}
-      <section className="bg-secondary/10 p-6 rounded-xl border-l-4 border-secondary">
-        <h3 className="text-xl font-semibold">Mini Karar Noktası</h3>
+      import { useState } from "react";
 
-        <p className="mt-2">
-          Aşağıdaki durumda ilk adımınız ne olurdu?
+export default function MiniDecision() {
+  const [selected, setSelected] = useState<number | null>(null);
+
+  const options = [
+    "Log analizi yapmak",
+    "Firewall’u kapatmak",
+    "IP bloklamak",
+  ];
+
+  return (
+    <div className="mt-4">
+      <p className="text-lg font-medium">İlk adımda hangi kararı alırsınız?</p>
+
+      <div className="mt-4 space-y-3">
+        {options.map((opt, i) => (
+          <button
+            key={i}
+            onClick={() => setSelected(i)}
+            className={`w-full p-3 border rounded-xl text-left transition
+              ${
+                selected === null
+                  ? "bg-white"
+                  : i === 0
+                  ? "bg-green-200 border-green-600"
+                  : i === selected
+                  ? "bg-red-200 border-red-600"
+                  : "bg-white"
+              }
+            `}
+          >
+            {opt}
+          </button>
+        ))}
+      </div>
+
+      {selected !== null && (
+        <p className="mt-4 text-sm text-gray-700 italic">
+          {selected === 0
+            ? "Doğru yaklaşım: önce log analizi."
+            : "Bu tercih doğru değil. İlk adım analiz olmalı."}
         </p>
-
-        <div className="mt-4 space-y-3">
-          <button className="w-full text-left p-3 bg-white shadow rounded-lg hover:bg-gray-50 transition border">
-            1) Logları inceleyerek anomalileri doğrulamak
-          </button>
-
-          <button className="w-full text-left p-3 bg-white shadow rounded-lg hover:bg-gray-50 transition border">
-            2) Bütün ağı kapatarak saldırıyı durdurmak
-          </button>
-
-          <button className="w-full text-left p-3 bg-white shadow rounded-lg hover:bg-gray-50 transition border">
-            3) Firewall'da IP bloklamaya başlamak
-          </button>
-        </div>
-
-        <p className="mt-3 text-gray-700">
-          *Doğru yaklaşım: önce analiz, sonra aksiyon. 
-          Yanlış hareket tüm sistemi devre dışı bırakabilir.*
-        </p>
-      </section>
+      )}
+    </div>
+  );
+}
 
       {/* ------------------------------------------------------------ */}
       {/* 4) Öğrenme Kazanımları                                      */}
